@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Áudio</title>
+</head>
+<body style="background:black;color:white;display:flex;justify-content:center;align-items:center;height:100vh;font-family:Courier New;">
+
+<h1>Consegue ouvir isso?</h1>
+
+<a href="audio/Código.MP3" download class="download-link">
+    .
+</a>
+
+<audio id="audio" loop>
+    <source src="audio/Código.MP3" type="audio/mpeg">
+</audio>
+
+<script>
+
+document.body.addEventListener("click", () => {
+
+    const audio = document.getElementById("audio");
+
+    audio.play()
+        .then(() => {
+            console.log("Áudio funcionando");
+        })
+        .catch((err) => {
+            console.log("Erro:", err);
+        });
+
+}, { once: true });
+
+</script>
+
+</body>
+</html>
